@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TP4_UML">
+  <ClassDiagramComponents>
+    <Class name="Casa" package="" visibility="public" xPosition="20.0" yPosition="9.0">
+      <Fields>
+        <Field name="zona" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="construirCasa" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Auto" package="" visibility="public" xPosition="212.0" yPosition="9.0">
+      <Fields>
+        <Field name="Modelo" type="String" visibility="private"/>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="combustible" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Celurar" package="" visibility="public" xPosition="508.0" yPosition="9.0">
+      <Fields>
+        <Field name="compania" type="String" visibility="private"/>
+        <Field name="numero" type="int" visibility="private"/>
+        <Field name="saldo" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Padre" package="" visibility="public" xPosition="197.0" yPosition="317.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="casa" type="Casa" visibility="private"/>
+        <Field name="auto" type="Auto" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="comprarAuto" returnType="void" visibility="public">
+          <Argument type="Auto" name="auto"/>
+        </Method>
+        <Method name="cantar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Hijo" package="" visibility="public" xPosition="493.0" yPosition="333.0">
+      <Fields>
+        <Field name="billetera" type="double" visibility="private"/>
+        <Field name="telefono" type="Celular" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="conducirAuto" returnType="void" visibility="public">
+          <Argument type="Auto" name="auto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Madre" package="" visibility="public" xPosition="877.0" yPosition="75.0">
+      <Methods>
+        <Method name="bailar" returnType="void" visibility="public"/>
+        <Method name="jugarLoteria" returnType="int" visibility="public"/>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Tio" package="" visibility="public" xPosition="844.0" yPosition="349.0">
+      <Methods>
+        <Method name="heredarDinero" returnType="void" visibility="public">
+          <Argument type="double" name="money"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Hermano" package="" visibility="public" xPosition="877.0" yPosition="541.0">
+      <Methods>
+        <Method name="jugarFutbol" returnType="void" visibility="public"/>
+        <Method name="hacerGoles" returnType="int" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="asociacion" source="Hijo" target="Celurar" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="composicion" source="Padre" target="Casa" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="agregacion" source="Padre" target="Auto" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Hijo" target="Padre"/>
+    <ImplementsRelation name="implements" source="Hijo" target="Tio"/>
+    <ImplementsRelation name="implements" source="Hijo" target="Madre"/>
+    <ImplementsRelation name="implements" source="Hijo" target="Hermano"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
